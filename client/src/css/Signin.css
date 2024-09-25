@@ -1,0 +1,19 @@
+.signin{
+    background-size:cover;
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-top:50px;
+}.login-form{
+    background-color:#fff;
+    padding:30px;
+    border:1px solid rgb(129,121,121);
+    border-radius:1px;
+}.loginform2{
+    background-color:#fff;
+    padding:20px;
+    margin-top:5px;
+    border:1px solid rgb(129,121,121);
+    border-radius:1px;
+}
