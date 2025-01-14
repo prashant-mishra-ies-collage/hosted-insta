@@ -81,6 +81,9 @@ src={user.Photo? user.Photo : picLink} alt="" />
 
 })}
 </div>
+
+
+
 {
  show &&
  <PostDetails item={posts} toggleDetails={toggleDetails}/>

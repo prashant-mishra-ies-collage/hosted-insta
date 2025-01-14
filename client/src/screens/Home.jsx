@@ -21,12 +21,18 @@ navigate("./signup")
 
 fetch("/allpost",{
   headers:{
-    "Authorization": "Bearer " + localStorage.getItem("jwt")
-  },
+    Authorization: "Bearer " + localStorage.getItem("jwt"),
+    },
   }).then(res=>res.json())
-  .then(result=>setData(result))
+  .then((result)=>{
+   // console.log(result);
+   setData(result);
+  })
   
-  .catch(err=>console.log(err))
+  //.catch(err=>console.log(err))
+ 
+.catch((err) => console.log("Error:", err));
+
 
   },[])
 
@@ -39,7 +45,7 @@ fetch("/allpost",{
       setItem(posts)
       
     }
-  }
+  };
 
 
 
@@ -104,7 +110,7 @@ const makeComment=(text,id)=>{
     method:"put",
     headers:{
       "Content-Type":"application/json",
-      Authorization: "Bearer " + localStorage.getItem("jwt"),
+      Authorization: "Bearer " + localStorage.getItem("jwt")
     },
     body:JSON.stringify({
       text:text,
@@ -145,7 +151,9 @@ const makeComment=(text,id)=>{
     {/* card header */}
     <div className="card-header">
       <div className="card-pic">
-    <img src={posts.postedBy.Photo? posts.postedBy.Photo : picLink} alt="" />
+   
+    
+      <img src={posts.postedBy.Photo? posts.postedBy.Photo : picLink} alt="" />
       </div>
 
       <h5>
@@ -157,7 +165,7 @@ const makeComment=(text,id)=>{
     </div>
     {/* card-img */}
     <div className="card-img">
-      <img src={posts.photo} alt="" />
+    <img src={posts.photo} alt="" />
     </div>
     {/* card content  ther use of javascript function for like and unlike*/}
     <div className="card-content">

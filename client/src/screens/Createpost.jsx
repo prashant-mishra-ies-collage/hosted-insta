@@ -69,6 +69,7 @@ const loadfile=(event)=>{
 }
 
    return (
+    
      <div className='createpost'>
 <div className="post-header">
     <h4 style={{margin:"3px auto"}}>Create New Post</h4>
@@ -95,6 +96,7 @@ const loadfile=(event)=>{
     }} placeholder='Write capton' type="text"></textarea>
 </div>
      </div>
+     
    )
  }
  

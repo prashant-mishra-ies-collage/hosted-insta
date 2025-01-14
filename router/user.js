@@ -94,24 +94,6 @@ router.get("/user/:id", (req, res) => {
 
   //unfollow user
 
- /* router.put("/unfollow",requireLogin,(req,res)=>{
-    USER.findByIdAndUpdate(req.body.followId,{
-      $pull:{followers:req.user._id}
-    },{
-      new:true
-    },(err,result)=>{
-      if(err){
-        return res.status(422).json({error:err})
-      }
-      USER.findByIdAndUpdate(req.user._id,{
-        $pull:{following:req.followId}
-      },{
-        new:true
-      }).then(result =>res.json(result))
-      .catch(err =>{return res.status(422).json({error:err})})
-    }
-  )
-  })*/
   router.put("/unfollow", requireLogin, (req, res) => {
     // followId वाले यूज़र के followers से लॉगिन यूज़र की आईडी को हटाएं
     USER.findByIdAndUpdate(

@@ -7,14 +7,6 @@ const jwt=require("jsonwebtoken")
 const jwt_secret="harshpathakvijaybhaipathak";
 const requireLogin=require("../middlewares/requireLogin");
 
-/*router.get('/',(req,res)=>{
-    res.send("hello dunia")
-})*/
-
-/*router.get("/createPost",requireLogin,(req,res)=>{
-console.log("hello auth")
-})*/
-
 
 
 router.post("/signup", (req, res) => {
