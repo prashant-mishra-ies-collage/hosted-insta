@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "../css/Signup.css";
 import { Link, useNavigate } from "react-router-dom";
-import insta from "../assets/insta.svg";
+
+
+
 import { toast } from 'react-toastify';
+
 
 
 export default function SignUp() {
@@ -58,7 +61,9 @@ export default function SignUp() {
     <div className="signUp">
       <div className="form-container">
         <div className="form">
-        <img src={insta} alt="" />
+        
+        <h1 className="signuplogo">TrueZone</h1>
+        
           <p className="loginPara">
             Sign up to see photos and videos <br /> from your friends
           </p>
@@ -96,6 +101,7 @@ export default function SignUp() {
             cookies policy.
           </p>
           <input type="submit" id="submit-btn" value="Sign Up" onClick={() => { postData() }} />
+          
         </div>
         <div className="form2">
           Already have an account ?

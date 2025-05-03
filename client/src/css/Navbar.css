@@ -2,6 +2,7 @@ img{
     width:10%
 
 }.navbar{
+    background-color:light white;
     display:flex;
     justify-content:space-around;
     box-shadow:1px 5px 5px #e0dcdc
@@ -33,6 +34,21 @@ ul{
         display:flex;
         justify-content:space-between;
     }
+    .logo-text {
+        font-size: 28px;
+        font-weight: bold;
+        color: #4CAF50; /* You can choose your brand color */
+        cursor: pointer;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-left: 20px;
+        transition: color 0.3s ease;
+      }
+      
+      
+      .logo-text:hover {
+        color: #388E3C; /* Hover color */
+      }
+      
     .navbar{
         width:100%;
         position:fixed;

@@ -1,9 +1,12 @@
 
 import React, { useEffect, useState ,useContext} from "react";
 import "../css/Signin.css";
-import insta from "../assets/insta.svg";
+
+
+
 import { NavLink,useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
+
 import { LoginContext } from "../context/LoginContext";
 
 
@@ -59,7 +62,7 @@ const postData = () => {
     <div className='signin'>
       <div>
     <div className='login-form'>
-      <img className='signuplogo'src={insta}alt=""/>
+    <h1 className="signin">TrueZone</h1>
       <div>
       <input type="email" name="email" id="email" value={email} placeholder="Email" onChange={(e) => { setEmail(e.target.value) }} />
       </div>
@@ -74,6 +77,7 @@ const postData = () => {
             />
       </div>
       <input type="submit" id='login-btn'value="Sign In" onClick={() => { postData() }}/>
+     
 </div>
 <div className='loginform2'>
   Dont have an account ?

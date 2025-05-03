@@ -1,5 +1,5 @@
 
-import insta from "../assets/insta.svg";
+
 import React,{useContext} from 'react'
 import '../css/Navbar.css'
 import { NavLink } from "react-router-dom";
@@ -94,15 +94,26 @@ explore
       ]
     }
 }
-
+/*
   return (
-
-    <div className='navbar'>
-        <img id="insta-logo" src={insta} alt="" onClick={()=>{navigate("/")}} />
-      <ul className="nav-menu">
      { loginStatus()}
  </ul>
  <ul className="nav-mobile">{loginStatusMobile()}</ul>
     </div>
   )
+}*/
+
+return (
+
+  <div className='navbar'>
+    <h1 className="logo-text" onClick={() => navigate("/")}>TrueZone</h1>
+    <ul className="nav-menu">
+   { loginStatus()}
+</ul>
+<ul className="nav-mobile">{loginStatusMobile()}</ul>
+  </div>
+)
 }
+
+
+

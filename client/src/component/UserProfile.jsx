@@ -74,6 +74,7 @@ fetch(`/user/${userid}`,{
  },[userid])
  
   return (
+    <div className="user">
     <div className='profile'>
      
      <div className="profile-frame">
@@ -134,7 +135,7 @@ fetch(`/user/${userid}`,{
 </div>
 
      </div>
-    
+    </div>
   )
 }
 

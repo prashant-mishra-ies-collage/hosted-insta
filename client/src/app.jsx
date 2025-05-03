@@ -17,6 +17,7 @@ import MyFollowing from "./screens/MyFollowing";
 
 
 
+
 export function App() {
  const [userLogin,setUserLogin]=useState(false)
  const [modal,setModalOpen]=useState(false)
@@ -25,6 +26,7 @@ export function App() {
     
     <BrowserRouter>
     <div className="app">
+    
       <LoginContext.Provider value={{setUserLogin, setModalOpen}}>
 <Navbar login={userLogin}/>
 <Routes>
@@ -38,6 +40,7 @@ export function App() {
 </Routes>
 {modal && <Modal setModalOpen={setModalOpen}></Modal>}
       </LoginContext.Provider>
+      
     
     </div>
     
