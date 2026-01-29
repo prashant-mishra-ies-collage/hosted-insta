@@ -8,9 +8,9 @@ const POST =mongoose.model("POST")
 
 
 
-/*
+
 router.get("/allpost",requireLogin,(req,res)=>{
-            POST.find({postedBy:req.user._id})
+            POST.find({})
     .populate("postedBy")
     .populate("comments.postedBy","_id name")
     .sort("-createdAt")
@@ -22,11 +22,11 @@ router.get("/allpost",requireLogin,(req,res)=>{
        res.json(posts)
     })
     .catch(err=>console.log(err))
-})*/
+})
 
 
 
-
+/*
 router.get("/allpost", requireLogin, (req, res) => {
     POST.find({})
         .populate("postedBy", "_id name")
@@ -40,7 +40,7 @@ router.get("/allpost", requireLogin, (req, res) => {
             res.status(500).json({ error: "Something went wrong" });
         });
 });
-
+*/
 
 
 router.get("/mypost",requireLogin,(req,res)=>{
