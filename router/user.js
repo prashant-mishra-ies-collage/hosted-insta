@@ -29,10 +29,10 @@ router.get("/user/:id", (req, res) => {
       .then((user) => {
         POST.find({ postedBy: req.params.id })
           .populate("postedBy", "_id")
-          .then((post) => { // यहाँ `err` को `post` से बदल दिया गया है
+          .then((post) => { 
             res.status(200).json({ user, post });
           })
-          .catch((err) => { // यहाँ `catch` का उपयोग किया गया है त्रुटि को संभालने के लिए
+          .catch((err) => { 
             return res.status(422).json({ error: err });
           });
       })
@@ -64,7 +64,7 @@ router.get("/user/:id", (req, res) => {
   })*/
 
   router.put("/follow", requireLogin, (req, res) => {
-    // पहले followId वाले यूज़र के followers में लॉगिन यूज़र की आईडी डालें
+    
     USER.findByIdAndUpdate(
       req.body.followId,
       { $push: { followers: req.user._id } },
@@ -72,10 +72,10 @@ router.get("/user/:id", (req, res) => {
     )
       .then((updatedUser) => {
         if (!updatedUser) {
-          return res.status(422).json({ error: "फ़ॉलो करने वाला यूज़र नहीं मिला" });
+          return res.status(422).json({ error: "follow the user" });
         }
   
-        // लॉगिन यूज़र के following में followId डालें
+        
         return USER.findByIdAndUpdate(
           req.user._id,
           { $push: { following: req.body.followId } },
@@ -95,7 +95,7 @@ router.get("/user/:id", (req, res) => {
   //unfollow user
 
   router.put("/unfollow", requireLogin, (req, res) => {
-    // followId वाले यूज़र के followers से लॉगिन यूज़र की आईडी को हटाएं
+    
     USER.findByIdAndUpdate(
       req.body.followId,
       { $pull: { followers: req.user._id } },
@@ -103,10 +103,10 @@ router.get("/user/:id", (req, res) => {
     )
       .then((updatedUser) => {
         if (!updatedUser) {
-          return res.status(422).json({ error: "अनफॉलो करने वाला यूज़र नहीं मिला" });
+          return res.status(422).json({ error: "user not found" });
         }
   
-        // लॉगिन यूज़र के following से followId को हटाएं
+        
         return USER.findByIdAndUpdate(
           req.user._id,
           { $pull: { following: req.body.followId } },  // req.followId -> req.body.followId
