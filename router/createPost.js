@@ -10,7 +10,7 @@ const POST =mongoose.model("POST")
 
 
 router.get("/allpost",requireLogin,(req,res)=>{
-            POST.find({postedBy:req.user._id})
+            POST.find({})
     .populate("postedBy")
     .populate("comments.postedBy","_id name")
     .sort("-createdAt")
